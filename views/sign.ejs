@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <% if (typeof errors !== 'undefined') { %>
+      <div class="alert alert-danger" role="alert">
+        <ul>
+          <% errors.forEach(error => { %>
+          <li><%= error.msg %></li>
+          <% }) %>
+        </ul>
+      </div>
+      <% } %>
+      <form method="post" action="/signUp">
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input
+            type="username"
+            class="form-control"
+            id="username"
+            aria-describedby="emailHelp"
+            name="username"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            aria-describedby="emailHelp"
+            name="email"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            aria-describedby="emailHelp"
+            name="password"
+            required
+          />
+        </div>
+        <div class="mb-3 form-check">
+          <input type="radio" class="form-check-input" id="exampleCheck1" checked/>
+          <label class="form-check-label" for="exampleCheck1"
+            >Accept all the terms and conditions</label
+          >
+        </div>
+        <button type="submit" class="btn btn-primary mb-3">Daftar</button>
+      </form>
+      <p>Sudah memiliki akun? <a href="/logIn"> Log In</a></p>
+    </div>
+  </div>
+</div>
